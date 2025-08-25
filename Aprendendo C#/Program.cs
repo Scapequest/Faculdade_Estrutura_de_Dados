@@ -82,6 +82,6 @@ while (op != "3")
   }
   else if (op == "2")
   {
-
+    Console.WriteLine("Funções com Vetor");
   }
 }
