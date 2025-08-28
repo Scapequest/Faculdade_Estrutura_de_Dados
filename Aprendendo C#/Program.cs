@@ -34,6 +34,14 @@ int somatoria(int nI, int nF)
     return nI + somatoria(nI + 1, nF);
 }
 
+int somatoriaVetor(int[] vetor, int n)
+{
+  if (n == 0)
+    return vetor[n];
+  else
+    return somatoriaVetor(vetor, n-1) + vetor[n];
+}
+
 string op;
 op = "0";
 while (op != "3")
@@ -82,6 +90,14 @@ while (op != "3")
   }
   else if (op == "2")
   {
-    Console.WriteLine("Funções com Vetor");
+    Console.WriteLine("Digite a quantidade de números desejados: ");
+    int n = Convert.ToInt32(Console.ReadLine());
+    int[] vetor = new int[n];
+    for (int i = 0; i < n; i++)
+    {
+      Console.WriteLine($"Digite o {i+1}º número:");
+      vetor[i] = Convert.ToInt32(Console.ReadLine());
+    }
+    Console.WriteLine($"Resultado da Somatória: {somatoriaVetor(vetor, n-1)}");
   }
 }
