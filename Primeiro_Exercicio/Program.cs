@@ -9,7 +9,7 @@
 
 void decrescente(int nI, int nF)
 {
-  if (nI >= nF)
+  if (nI <= nF)
   {
     Console.WriteLine(nF);
     decrescente(nI, nF - 1);
@@ -50,14 +50,14 @@ while (op != "3")
   Console.WriteLine("1 - Funções sem vetor");
   Console.WriteLine("2 - Função com vetor");
   Console.WriteLine("3 - Sair");
-  Console.WriteLine("Digite a opção desejada: ");
+  Console.Write("Digite a opção desejada: ");
   op = Console.ReadLine();
   if (op == "1")
   {
     int nI, nF;
-    Console.WriteLine("Número Inicial: ");
+    Console.Write("Número Inicial: ");
     nI = Convert.ToInt32(Console.ReadLine());
-    Console.WriteLine("Número Final: ");
+    Console.Write("Número Final: ");
     nF = Convert.ToInt32(Console.ReadLine());
 
     Console.WriteLine("MENU SECUNDARIO");
@@ -83,19 +83,16 @@ while (op != "3")
       impares(nI, nF);
     }
     else if (op2 == "4")
-    {
-      Console.WriteLine($"Apresentando somatória dos números entre {nI} e {nF}:");
-      Console.WriteLine(somatoria(nI, nF));
-    }
+      Console.WriteLine($"Apresentando somatória dos números entre {nI} e {nF}: {somatoria(nI, nF)}");
   }
   else if (op == "2")
   {
-    Console.WriteLine("Digite a quantidade de números desejados: ");
+    Console.Write("Digite a quantidade de números desejados: ");
     int n = Convert.ToInt32(Console.ReadLine());
     int[] vetor = new int[n];
     for (int i = 0; i < n; i++)
     {
-      Console.WriteLine($"Digite o {i+1}º número:");
+      Console.Write($"Digite o {i+1}º número:");
       vetor[i] = Convert.ToInt32(Console.ReadLine());
     }
     Console.WriteLine($"Resultado da Somatória: {somatoriaVetor(vetor, n-1)}");
