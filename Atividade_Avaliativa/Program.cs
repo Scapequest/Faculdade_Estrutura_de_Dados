@@ -33,6 +33,22 @@ int FibonacciR(int n)
     else
         return FibonacciR(n-1) + FibonacciR(n-2);
 }
+int FibonacciI(int n)
+{
+    if (n == 0)
+        return 0;
+    if (n == 1)
+        return 1;
+    int anterior = 0;
+    int atual = 1;
+    for (int i = 2; i <= n; i++)
+    {
+        int proximo = anterior + atual;
+        anterior = atual;
+        atual = proximo;
+    }
+    return atual;
+}
 void Binario(int n)
 {
     if (n == 1)
@@ -43,7 +59,6 @@ void Binario(int n)
         Console.Write(n%2);
     }
 }
-
 string op1;
 op1 = "0";
 while (op1 != "6")
@@ -91,6 +106,12 @@ while (op1 != "6")
             Console.Write("Digite o número desejado: ");
             int x = Convert.ToInt32(Console.ReadLine());
             Console.WriteLine(FibonacciR(x));  
+        }
+        else
+        {
+            Console.Write("Digite o número desejado: ");
+            int x = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine(FibonacciI(x));  
         }
     }
     else if (op1 == "5")
