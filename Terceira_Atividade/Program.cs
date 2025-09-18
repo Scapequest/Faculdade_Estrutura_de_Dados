@@ -34,14 +34,14 @@ for (int i = 0; i <= entrada.Length; i++)
 {
   if (i == (entrada.Length))
   {
-    while (topo > 0)
+    while (!EstaVazia())
       saida = saida + Remove();
   }
   else if (entrada[i] != ' ')
     Insere(entrada[i]);
   else if (entrada[i] == ' ')
   {
-    while (topo > 0)
+    while (!EstaVazia())
       saida = saida + Remove();
     saida = saida + ' ';
   }
