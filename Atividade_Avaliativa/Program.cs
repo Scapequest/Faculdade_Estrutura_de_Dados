@@ -105,13 +105,13 @@ while (op1 != "6")
         {
             Console.Write("Digite o número desejado: ");
             int x = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine(FibonacciR(x));  
+            Console.WriteLine(FibonacciR(x));
         }
         else
         {
             Console.Write("Digite o número desejado: ");
             int x = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine(FibonacciI(x));  
+            Console.WriteLine(FibonacciI(x));
         }
     }
     else if (op1 == "5")
